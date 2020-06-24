@@ -6,6 +6,7 @@ class ChooseLocation extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Choose Location"),
+        centerTitle: true,
       ),
     );
   }
