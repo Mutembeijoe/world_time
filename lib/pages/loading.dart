@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:worldtime/services/time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   @override
   _LoadingState createState() => _LoadingState();
 }
 
-class _LoadingState extends State<Loading> {
+class _LoadingState extends State<Loading>{
   void setUpTime() async {
     var city =
         City(url: "Africa/Nairobi", location: "Nairobi", flag: 'Nairobi.png');
@@ -28,8 +29,14 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Colors.blue,
       body: SafeArea(
-        child: Text("Loading Screen"),
+        child: Center(
+          child: SpinKitSquareCircle(
+            color: Colors.white,
+            size: 100.0,
+          ),
+        ),
       ),
     );
   }

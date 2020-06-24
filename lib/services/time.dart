@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:intl/intl.dart';
 
 class City {
   String url;
@@ -19,7 +20,7 @@ class City {
 
       now = now.add(Duration(hours: int.parse(offset)));
 
-      time = now.toString();
+      time = DateFormat.jm().format(now);
     } catch (e) {
       print(e);
       time = "Failed to load time";
