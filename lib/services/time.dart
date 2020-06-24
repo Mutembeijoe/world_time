@@ -7,6 +7,7 @@ class City {
   String time;
   String location;
   String flag;
+  bool isDayTime;
 
   City({this.url, this.location, this.flag});
   Future<void> getTime() async {
@@ -20,6 +21,7 @@ class City {
 
       now = now.add(Duration(hours: int.parse(offset)));
 
+      isDayTime = now.hour > 6 && now.hour < 19 ? true : false;
       time = DateFormat.jm().format(now);
     } catch (e) {
       print(e);
